@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 import time
 import json
 import random
+from tqdm import tqdm
 
 def configure_webdriver():
     """Return a configured headless Chrome webdriver."""
@@ -97,6 +98,11 @@ def save_to_json(data, filename="yc_job_listings.json"):
         json.dump(data, f, indent=2)
     print(f"Saved {len(data)} job listings to {filename}")
 
+
+def get_company_founders(job_listing):
+    for job in job_listing: 
+        print(job['company_link'])
+    
 def main():
     # Scrape and parse job listings
     url = "https://www.workatastartup.com/jobs"
@@ -105,15 +111,21 @@ def main():
     job_cards_html = scrape_job_listings(url)
     print(f"Successfully scraped {len(job_cards_html)} job listings")
 
-    job_listings = [parse_job_card(html) for html in job_cards_html]
+    job_listings = []
+    
+    for html in tqdm(job_cards_html, desc="Parsing job listings", unit="job"):
+        job_listing = parse_job_card(html)
+        job_listings.append(job_listing)    
+        
+    # get_company_founders(job_listing=job_listings)
 
     # Save results to JSON
-    save_to_json(job_listings)
+    # save_to_json(job_listings)
 
-    # Optionally print a sample job listing
-    if job_listings:
-        print("\nSample job listing:")
-        print(json.dumps(job_listings[0], indent=2))
+    # # Optionally print a sample job listing
+    # if job_listings:
+    #     print("\nSample job listing:")
+    #     print(json.dumps(job_listings[0], indent=2))
 
 if __name__ == "__main__":
     main()
