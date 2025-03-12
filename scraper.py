@@ -13,8 +13,8 @@ import random
 chrome_options = Options()
 chrome_options.add_argument('--headless')  # Comment this line to see the browser in action
 
-# Set path to chromedriver.exe (Download and save on your machine)
-webdriver_path = '/Users/hide/Downloads/chromedriver_mac64/chromedriver.exe'
+# Set path to chromedriver (Make sure it is correct)
+webdriver_path = '/Users/gilbertyoung/Downloads/chromedriver-mac-arm64/chromedriver'
 
 # Create a ChromeDriver service
 service = Service(webdriver_path)
@@ -28,27 +28,26 @@ wait = WebDriverWait(driver, 10)
 
 # Store the HTML of all posts
 launch_cards_html = []
+num_posts = 0
 
 while True:
-    # Get the current number of posts
-    num_posts = len(launch_cards_html)
-
-    # Scroll down the page to trigger lazy loading of launches
     driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
-    wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, 'Loader')))
-    time.sleep(random.randint(2, 8))  # Wait for the new posts to load
+    try:
+        wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, 'Loader')))
+    except:
+        pass
+    
+    time.sleep(random.randint(2, 5)) 
 
-    # Create a BeautifulSoup object with the HTML content
     soup = BeautifulSoup(driver.page_source, 'html.parser')
-
-    # Find all the launch cards
     launch_cards = soup.find_all('div', class_='post row align-center')
 
-    # Store the HTML of each new launch card
+    # Only add new launch cards that were not already in the list
     for card in launch_cards[num_posts:]:
         launch_cards_html.append(str(card))
+    
+    num_posts = len(launch_cards_html)
 
-    # If no new posts were added, break the loop
     if len(launch_cards_html) == num_posts:
         break
 
@@ -62,11 +61,11 @@ for html in launch_cards_html:
     post = {}
 
     # Extract company name
-    company_name = soup.find('a', class_='post-company-name').text
+    company_name = soup.find('a', class_='post-company-name').text.strip()
     post['company_name'] = company_name
 
     # Extract description
-    description = soup.find('a', class_='post-tagline').text
+    description = soup.find('a', class_='post-tagline').text.strip()
     post['description'] = description
 
     # Extract post date
@@ -78,7 +77,7 @@ for html in launch_cards_html:
     post['cohort'] = cohort
 
     # Extract tags
-    tags = [tag.text for tag in soup.find_all('div', class_='post-tag')]
+    tags = [tag.text.strip() for tag in soup.find_all('div', class_='post-tag')]
     post['tags'] = tags
 
     # Extract link
