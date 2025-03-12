@@ -9,93 +9,111 @@ import time
 import json
 import random
 
-# Configure Chrome options to run the browser in headless mode
-chrome_options = Options()
-chrome_options.add_argument('--headless')  # Comment this line to see the browser in action
+def configure_webdriver():
+    """Return a configured headless Chrome webdriver."""
+    options = Options()
+    options.add_argument('--headless')
+    service = Service('/Users/gilbertyoung/Downloads/chromedriver-mac-arm64/chromedriver')
+    return webdriver.Chrome(service=service, options=options)
 
-# Set path to chromedriver (Make sure it is correct)
-webdriver_path = '/Users/gilbertyoung/Downloads/chromedriver-mac-arm64/chromedriver'
+def split_company_and_batch(text):
+    """Split company name and batch from formatted text."""
+    parts = text.split('\u00a0')
+    return (parts[0].strip(), parts[1].strip('()')) if len(parts) == 2 else (text, None)
 
-# Create a ChromeDriver service
-service = Service(webdriver_path)
+def scrape_job_listings(url):
+    """Scrape job listings from the provided URL."""
+    driver = configure_webdriver()
+    job_cards_html = []
+    prev_count = 0
 
-# Launch Chrome browser
-driver = webdriver.Chrome(service=service, options=chrome_options)
-
-yc_launch_page = "https://www.ycombinator.com/launches"
-yc_jobs_page = "https://www.workatastartup.com/jobs"
-
-# Wait for the page to load
-driver.get(yc_jobs_page)
-wait = WebDriverWait(driver, 10)
-
-# Store the HTML of all posts
-launch_cards_html = []
-num_posts = 0
-
-# def get_company_founders(): 
-    
-while True:
-    driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
     try:
-        wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, 'Loader')))
-    except:
-        pass
-    
-    time.sleep(random.randint(2, 5)) 
+        driver.get(url)
+        wait = WebDriverWait(driver, 10)
 
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
-    launch_cards = soup.find_all('div', class_='w-full bg-beige-lighter mb-2 rounded-md p-2 border border-gray-200 flex')
-    print(len(launch_cards))
+        while True:
+            driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+            try:
+                wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, 'Loader')))
+            except:
+                pass
 
-    # Only add new launch cards that were not already in the list
-    for card in launch_cards[num_posts:]:
-        launch_cards_html.append(str(card))
-    
-    num_posts = len(launch_cards_html)
+            time.sleep(random.uniform(2, 5))
+            soup = BeautifulSoup(driver.page_source, 'html.parser')
+            job_cards = soup.find_all('div', class_='w-full bg-beige-lighter mb-2 rounded-md p-2 border border-gray-200 flex')
+            new_count = len(job_cards)
 
-    if len(launch_cards_html) == num_posts:
-        break
+            if new_count == prev_count:
+                break
 
-# Quit the browser
-driver.quit()
+            job_cards_html.extend(map(str, job_cards[prev_count:new_count]))
+            prev_count = new_count
 
-# Print the HTML of each launch card
-for html in launch_cards_html:
+    finally:
+        driver.quit()
+
+    return job_cards_html
+
+def parse_job_card(html):
+    """Extract job details from job card HTML."""
     soup = BeautifulSoup(html, 'html.parser')
+    job_listing = {}
 
-    post = {}
+    # Extract company name, batch, and description
+    company_details_tag = soup.find('div', class_="company-details")
+    if company_details_tag:
+        company_name_tag = company_details_tag.find('span', class_='font-bold')
+        if company_name_tag:
+            company_name, batch = split_company_and_batch(company_name_tag.text.strip())
+            job_listing.update({'company_name': company_name, 'batch': batch})
 
-    # Extract company name
-    company_name = soup.find('span', class_='font-bold').text.strip()
-    post['company_name'] = company_name
+        description_tag = company_details_tag.find('span', class_='text-gray-600')
+        if description_tag:
+            job_listing['description'] = description_tag.text.strip()
 
-    # # Extract description
-    description = soup.find('span', class_='text-gray-600 block sm:inline').text.strip()
-    post['description'] = description
+        link_tag = company_details_tag.find('a', href=True)
+        if link_tag:
+            job_listing['company_link'] = link_tag['href']
+
+    # Extract job title, job type, location, and tech stack
+    job_name_tag = soup.find('a', class_='font-bold captialize mr-5')
+    if job_name_tag:
+        job_listing['job_name'] = job_name_tag.text.strip()
+
+    job_details_tag = soup.find('p', class_='job-details my-auto break-normal')
+    if job_details_tag:
+        spans = job_details_tag.find_all('span')
+        job_listing.update({
+            'job_type': spans[0].text.strip() if len(spans) > 0 else '',
+            'location': spans[1].text.strip() if len(spans) > 1 else '',
+            'tech_stack': spans[2].text.strip() if len(spans) > 2 else ''
+        })
+
+    return job_listing
+
+def save_to_json(data, filename="yc_job_listings.json"):
+    """Save job listings to a JSON file."""
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2)
+    print(f"Saved {len(data)} job listings to {filename}")
+
+def main():
+    # Scrape and parse job listings
+    url = "https://www.workatastartup.com/jobs"
+    print("Starting to scrape job listings...")
     
-    
-    job_name = soup.find('a', class_='font-bold captialize mr-5').text.strip()
-    post['job_name'] = job_name
-    
-    
+    job_cards_html = scrape_job_listings(url)
+    print(f"Successfully scraped {len(job_cards_html)} job listings")
 
-    # # Extract post date
-    # post_date = soup.find('div', class_='post-date').find('time')['datetime']
-    # post['post_date'] = post_date
+    job_listings = [parse_job_card(html) for html in job_cards_html]
 
-    # # Extract cohort
-    # cohort = soup.find('div', class_='batch-tag post-tag').text.strip()
-    # post['cohort'] = cohort
+    # Save results to JSON
+    save_to_json(job_listings)
 
-    # # Extract tags
-    # tags = [tag.text.strip() for tag in soup.find_all('div', class_='post-tag')]
-    # post['tags'] = tags
+    # Optionally print a sample job listing
+    if job_listings:
+        print("\nSample job listing:")
+        print(json.dumps(job_listings[0], indent=2))
 
-    # # Extract link
-    # link = 'https://www.ycombinator.com' + soup.find('a', class_='post-title')['href']
-    # post['link'] = link
-
-    # Convert to JSON
-    json_data = json.dumps(post, indent=2)
-    print(json_data)
+if __name__ == "__main__":
+    main()
