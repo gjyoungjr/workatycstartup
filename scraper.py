@@ -77,9 +77,12 @@ def parse_job_card(html):
             job_listing['company_link'] = link_tag['href']
 
     # Extract job title, job type, location, and tech stack
-    job_name_tag = soup.find('a', class_='font-bold captialize mr-5')
+    job_name_tag = soup.find('div', class_='job-name')
     if job_name_tag:
-        job_listing['job_name'] = job_name_tag.text.strip()
+        job_listing['job_name'] = job_name_tag.find('a').text.strip()
+        job_link_tag = job_name_tag.find('a', href=True)
+        if job_link_tag: 
+            job_listing['job_link'] = job_link_tag['href']
 
     job_details_tag = soup.find('p', class_='job-details my-auto break-normal')
     if job_details_tag:
@@ -120,12 +123,12 @@ def main():
     # get_company_founders(job_listing=job_listings)
 
     # Save results to JSON
-    # save_to_json(job_listings)
+    save_to_json(job_listings)
 
-    # # Optionally print a sample job listing
-    # if job_listings:
-    #     print("\nSample job listing:")
-    #     print(json.dumps(job_listings[0], indent=2))
+    # Optionally print a sample job listing
+    if job_listings:
+        print("\nSample job listing:")
+        print(json.dumps(job_listings[0], indent=2))
 
 if __name__ == "__main__":
     main()
