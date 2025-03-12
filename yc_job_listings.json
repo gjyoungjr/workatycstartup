@@ -5,6 +5,7 @@
     "description": "AI copilot for electronics design",
     "company_link": "https://www.workatastartup.com/companies/snapmagic",
     "job_name": "Lead Principal Engineer",
+    "job_link": "https://www.ycombinator.com/companies/snapmagic/jobs/cU7g2O2-lead-principal-engineer",
     "job_type": "fulltime",
     "location": "Redwood City, CA, US",
     "tech_stack": "Backend"
@@ -15,6 +16,7 @@
     "description": "We're Robinhood for pre-IPO startups. Everyone can invest $100.",
     "company_link": "https://www.workatastartup.com/companies/wefunder",
     "job_name": "Full Stack, Senior Software Engineer",
+    "job_link": "https://www.ycombinator.com/companies/wefunder/jobs/oC8Vfe1-full-stack-senior-software-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Full stack"
@@ -25,6 +27,7 @@
     "description": "AI Workers for Healthcare Orgs to Find, Call & Schedule More Patients.",
     "company_link": "https://www.workatastartup.com/companies/helpcare-ai",
     "job_name": "Senior Fullstack Engineer",
+    "job_link": "https://www.ycombinator.com/companies/helpcare-ai/jobs/iuk6sAt-senior-fullstack-engineer",
     "job_type": "fulltime",
     "location": "US / CA / MX / BR / AR / BY / UY / PL / EC / CR / PA / CL / CO / RO / PE / BG / Remote (US; CA; MX; BR; AR; BY; UY; PL; EC; CR; PA; CL; CO; RO; PE; BG)",
     "tech_stack": "Full stack"
@@ -35,6 +38,7 @@
     "description": "AI Compliance Analysts for Banks & Fintechs",
     "company_link": "https://www.workatastartup.com/companies/sphinx",
     "job_name": "Founding Engineer",
+    "job_link": "https://www.ycombinator.com/companies/sphinx/jobs/mlOP28j-founding-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Backend"
@@ -45,6 +49,7 @@
     "description": "Conversations with AI patients to scale healthcare training.",
     "company_link": "https://www.workatastartup.com/companies/simcare-ai",
     "job_name": "Founding Engineer",
+    "job_link": "https://www.ycombinator.com/companies/simcare-ai/jobs/PZed3Sb-founding-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US / Remote (US)",
     "tech_stack": "Full stack"
@@ -55,6 +60,7 @@
     "description": "Conversations with AI patients to scale healthcare training.",
     "company_link": "https://www.workatastartup.com/companies/simcare-ai",
     "job_name": "Ex-Founder",
+    "job_link": "https://www.ycombinator.com/companies/simcare-ai/jobs/KowU0FS-ex-founder",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Full stack"
@@ -65,6 +71,7 @@
     "description": "No-Code AI Builder",
     "company_link": "https://www.workatastartup.com/companies/voker",
     "job_name": "Founding Full Stack AI Software Engineer",
+    "job_link": "https://www.ycombinator.com/companies/voker/jobs/XCcmcEk-founding-full-stack-ai-software-engineer",
     "job_type": "fulltime",
     "location": "Los Angeles, CA, US",
     "tech_stack": "Full stack"
@@ -75,6 +82,7 @@
     "description": "Qualitative Research Conducted and Analyzed by AI",
     "company_link": "https://www.workatastartup.com/companies/conveo",
     "job_name": "Senior Full Stack Engineer (React + TypeScript)",
+    "job_link": "https://www.ycombinator.com/companies/conveo/jobs/OcMOJXI-senior-full-stack-engineer-react-typescript",
     "job_type": "fulltime",
     "location": "Antwerp, Flanders, BE",
     "tech_stack": "Full stack"
@@ -85,6 +93,7 @@
     "description": "AI agents for mortgage servicing",
     "company_link": "https://www.workatastartup.com/companies/kastle",
     "job_name": "Founding Engineer at Kastle (S24)",
+    "job_link": "https://www.ycombinator.com/companies/kastle/jobs/ItDVKB7-founding-engineer-at-kastle-s24",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Full stack"
@@ -95,6 +104,7 @@
     "description": "AI agents for mortgage servicing",
     "company_link": "https://www.workatastartup.com/companies/kastle",
     "job_name": "Founding Applied AI Engineer at Kastle",
+    "job_link": "https://www.ycombinator.com/companies/kastle/jobs/XSq5nJT-founding-applied-ai-engineer-at-kastle",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Backend"
@@ -105,6 +115,7 @@
     "description": "The AI workforce for medical groups",
     "company_link": "https://www.workatastartup.com/companies/tivara",
     "job_name": "Founding Product Engineer",
+    "job_link": "https://www.ycombinator.com/companies/tivara/jobs/6Hhb9Oo-founding-product-engineer",
     "job_type": "fulltime",
     "location": "New York, NY, US",
     "tech_stack": "Full stack"
@@ -115,6 +126,7 @@
     "description": "Foundation models to simulate Earth, starting with weather.",
     "company_link": "https://www.workatastartup.com/companies/silurian",
     "job_name": "Machine Learning Research Engineer / Scientist",
+    "job_link": "https://www.ycombinator.com/companies/silurian/jobs/67uBjLX-machine-learning-research-engineer-scientist",
     "job_type": "fulltime",
     "location": "London, England, GB",
     "tech_stack": "Machine learning"
@@ -124,7 +136,8 @@
     "batch": "S24",
     "description": "IDE to develop, iterate and deploy AI Agents",
     "company_link": "https://www.workatastartup.com/companies/wordware",
-    "job_name": "forward deployed engineer or head of customer (coding skills necessary)",
+    "job_name": "DevRel engineer",
+    "job_link": "https://www.ycombinator.com/companies/wordware/jobs/Hk3pqc5-devrel-engineer",
     "job_type": "fulltime",
     "location": "San Francisco",
     "tech_stack": "Full stack"
@@ -134,7 +147,8 @@
     "batch": "S24",
     "description": "IDE to develop, iterate and deploy AI Agents",
     "company_link": "https://www.workatastartup.com/companies/wordware",
-    "job_name": "DevRel engineer",
+    "job_name": "forward deployed engineer or head of customer (coding skills necessary)",
+    "job_link": "https://www.ycombinator.com/companies/wordware/jobs/rO10pMV-forward-deployed-engineer-or-head-of-customer-coding-skills-necessary",
     "job_type": "fulltime",
     "location": "San Francisco",
     "tech_stack": "Full stack"
@@ -145,6 +159,7 @@
     "description": "Corgi is building an AI insurance company",
     "company_link": "https://www.workatastartup.com/companies/corgi",
     "job_name": "Golang Developer / Full-Stack Engineer",
+    "job_link": "https://www.ycombinator.com/companies/corgi/jobs/1iSMdrS-golang-developer-full-stack-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Full stack"
@@ -155,6 +170,18 @@
     "description": "Corgi is building an AI insurance company",
     "company_link": "https://www.workatastartup.com/companies/corgi",
     "job_name": "Paid Gap Year (before college) - Engineering",
+    "job_link": "https://www.ycombinator.com/companies/corgi/jobs/HmURH6G-paid-gap-year-before-college-engineering",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Phonely",
+    "batch": "S24",
+    "description": "AI call centers",
+    "company_link": "https://www.workatastartup.com/companies/phonely",
+    "job_name": "Founding Forward Deployed Engineer",
+    "job_link": "https://www.ycombinator.com/companies/phonely/jobs/Raj2SfD-founding-forward-deployed-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Full stack"
@@ -165,19 +192,10 @@
     "description": "AI call centers",
     "company_link": "https://www.workatastartup.com/companies/phonely",
     "job_name": "Founding Engineer (Backend)",
+    "job_link": "https://www.ycombinator.com/companies/phonely/jobs/YIcOA27-founding-engineer-backend",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Backend"
-  },
-  {
-    "company_name": "Phonely",
-    "batch": "S24",
-    "description": "AI call centers",
-    "company_link": "https://www.workatastartup.com/companies/phonely",
-    "job_name": "Founding Forward Deployed Engineer",
-    "job_type": "fulltime",
-    "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
   },
   {
     "company_name": "Entangl",
@@ -185,6 +203,7 @@
     "description": "Find & resolve issues in data center engineering & operations using AI",
     "company_link": "https://www.workatastartup.com/companies/entangl",
     "job_name": "Full Stack Engineer",
+    "job_link": "https://www.ycombinator.com/companies/entangl/jobs/eXa7z60-full-stack-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Full stack"
@@ -194,7 +213,8 @@
     "batch": "S24",
     "description": "Find & resolve issues in data center engineering & operations using AI",
     "company_link": "https://www.workatastartup.com/companies/entangl",
-    "job_name": "Greg Brockman",
+    "job_name": "Forward Deployed Software Engineer",
+    "job_link": "https://www.ycombinator.com/companies/entangl/jobs/G4YCOng-forward-deployed-software-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Full stack"
@@ -205,6 +225,7 @@
     "description": "GPS Denied Navigation for Drones",
     "company_link": "https://www.workatastartup.com/companies/theseus",
     "job_name": "Founding Senior Localization Engineer",
+    "job_link": "https://www.ycombinator.com/companies/theseus/jobs/rXUMY8g-founding-senior-localization-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Robotics"
@@ -214,10 +235,11 @@
     "batch": "S24",
     "description": "GPS Denied Navigation for Drones",
     "company_link": "https://www.workatastartup.com/companies/theseus",
-    "job_name": "Founding Embedded Software Engineer",
+    "job_name": "Founding Localization Engineer",
+    "job_link": "https://www.ycombinator.com/companies/theseus/jobs/iVNdUWO-founding-localization-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Embedded systems"
+    "tech_stack": "Robotics"
   },
   {
     "company_name": "Variant",
@@ -225,6 +247,7 @@
     "description": "Building the state-of-the-art model for software design",
     "company_link": "https://www.workatastartup.com/companies/variant",
     "job_name": "Founding Frontend Engineer",
+    "job_link": "https://www.ycombinator.com/companies/variant/jobs/ZEEFZxK-founding-frontend-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Frontend"
@@ -235,6 +258,7 @@
     "description": "AI Agents for precise document analysis",
     "company_link": "https://www.workatastartup.com/companies/powder",
     "job_name": "Founding Full Stack Engineer",
+    "job_link": "https://www.ycombinator.com/companies/powder/jobs/nPIU29b-founding-full-stack-engineer",
     "job_type": "fulltime",
     "location": "Redwood City, CA, US",
     "tech_stack": "Full stack"
@@ -245,6 +269,7 @@
     "description": "AI & Automation Software Powering Physical Commodity Trading",
     "company_link": "https://www.workatastartup.com/companies/commodityai",
     "job_name": "Founding Engineer",
+    "job_link": "https://www.ycombinator.com/companies/commodityai/jobs/yZkCefX-founding-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
     "tech_stack": "Full stack"
@@ -255,6 +280,7 @@
     "description": "Supercharge Your Contact Center Operations with AI Phone Agents",
     "company_link": "https://www.workatastartup.com/companies/retell-ai",
     "job_name": "Founding Senior Software Engineer (Forward Deployed)",
+    "job_link": "https://www.ycombinator.com/companies/retell-ai/jobs/1okdYK9-founding-senior-software-engineer-forward-deployed",
     "job_type": "fulltime",
     "location": "Redwood City, CA, US",
     "tech_stack": "Full stack"
@@ -264,10 +290,11 @@
     "batch": "W24",
     "description": "Supercharge Your Contact Center Operations with AI Phone Agents",
     "company_link": "https://www.workatastartup.com/companies/retell-ai",
-    "job_name": "Founding Senior Software Engineer (Full Stack)",
+    "job_name": "Founding Senior Software Engineer (Backend)",
+    "job_link": "https://www.ycombinator.com/companies/retell-ai/jobs/3yPgfmB-founding-senior-software-engineer-backend",
     "job_type": "fulltime",
     "location": "Redwood City, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Backend"
   },
   {
     "company_name": "Stacksync",
@@ -275,6 +302,7 @@
     "description": "Real-time and two-way sync between CRMs and Databases",
     "company_link": "https://www.workatastartup.com/companies/stacksync",
     "job_name": "Full-stack engineer",
+    "job_link": "https://www.ycombinator.com/companies/stacksync/jobs/rH8hcby-full-stack-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US / Lausanne, VD, CH / FR / Remote (FR; CH; IT; DE; US)",
     "tech_stack": "Full stack"
