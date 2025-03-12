@@ -1,0 +1,282 @@
+[
+  {
+    "company_name": "SnapMagic",
+    "batch": "S15",
+    "description": "AI copilot for electronics design",
+    "company_link": "https://www.workatastartup.com/companies/snapmagic",
+    "job_name": "Lead Principal Engineer",
+    "job_type": "fulltime",
+    "location": "Redwood City, CA, US",
+    "tech_stack": "Backend"
+  },
+  {
+    "company_name": "Wefunder",
+    "batch": "W13",
+    "description": "We're Robinhood for pre-IPO startups. Everyone can invest $100.",
+    "company_link": "https://www.workatastartup.com/companies/wefunder",
+    "job_name": "Full Stack, Senior Software Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Helpcare AI",
+    "batch": "F24",
+    "description": "AI Workers for Healthcare Orgs to Find, Call & Schedule More Patients.",
+    "company_link": "https://www.workatastartup.com/companies/helpcare-ai",
+    "job_name": "Senior Fullstack Engineer",
+    "job_type": "fulltime",
+    "location": "US / CA / MX / BR / AR / BY / UY / PL / EC / CR / PA / CL / CO / RO / PE / BG / Remote (US; CA; MX; BR; AR; BY; UY; PL; EC; CR; PA; CL; CO; RO; PE; BG)",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Sphinx",
+    "batch": "F24",
+    "description": "AI Compliance Analysts for Banks & Fintechs",
+    "company_link": "https://www.workatastartup.com/companies/sphinx",
+    "job_name": "Founding Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Backend"
+  },
+  {
+    "company_name": "SimCare AI",
+    "batch": "S24",
+    "description": "Conversations with AI patients to scale healthcare training.",
+    "company_link": "https://www.workatastartup.com/companies/simcare-ai",
+    "job_name": "Founding Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US / Remote (US)",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "SimCare AI",
+    "batch": "S24",
+    "description": "Conversations with AI patients to scale healthcare training.",
+    "company_link": "https://www.workatastartup.com/companies/simcare-ai",
+    "job_name": "Ex-Founder",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Voker",
+    "batch": "S24",
+    "description": "No-Code AI Builder",
+    "company_link": "https://www.workatastartup.com/companies/voker",
+    "job_name": "Founding Full Stack AI Software Engineer",
+    "job_type": "fulltime",
+    "location": "Los Angeles, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Conveo",
+    "batch": "S24",
+    "description": "Qualitative Research Conducted and Analyzed by AI",
+    "company_link": "https://www.workatastartup.com/companies/conveo",
+    "job_name": "Senior Full Stack Engineer (React + TypeScript)",
+    "job_type": "fulltime",
+    "location": "Antwerp, Flanders, BE",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Kastle",
+    "batch": "S24",
+    "description": "AI agents for mortgage servicing",
+    "company_link": "https://www.workatastartup.com/companies/kastle",
+    "job_name": "Founding Engineer at Kastle (S24)",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Kastle",
+    "batch": "S24",
+    "description": "AI agents for mortgage servicing",
+    "company_link": "https://www.workatastartup.com/companies/kastle",
+    "job_name": "Founding Applied AI Engineer at Kastle",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Backend"
+  },
+  {
+    "company_name": "Tivara",
+    "batch": "S24",
+    "description": "The AI workforce for medical groups",
+    "company_link": "https://www.workatastartup.com/companies/tivara",
+    "job_name": "Founding Product Engineer",
+    "job_type": "fulltime",
+    "location": "New York, NY, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Silurian",
+    "batch": "S24",
+    "description": "Foundation models to simulate Earth, starting with weather.",
+    "company_link": "https://www.workatastartup.com/companies/silurian",
+    "job_name": "Machine Learning Research Engineer / Scientist",
+    "job_type": "fulltime",
+    "location": "London, England, GB",
+    "tech_stack": "Machine learning"
+  },
+  {
+    "company_name": "Wordware",
+    "batch": "S24",
+    "description": "IDE to develop, iterate and deploy AI Agents",
+    "company_link": "https://www.workatastartup.com/companies/wordware",
+    "job_name": "forward deployed engineer or head of customer (coding skills necessary)",
+    "job_type": "fulltime",
+    "location": "San Francisco",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Wordware",
+    "batch": "S24",
+    "description": "IDE to develop, iterate and deploy AI Agents",
+    "company_link": "https://www.workatastartup.com/companies/wordware",
+    "job_name": "DevRel engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Corgi",
+    "batch": "S24",
+    "description": "Corgi is building an AI insurance company",
+    "company_link": "https://www.workatastartup.com/companies/corgi",
+    "job_name": "Golang Developer / Full-Stack Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Corgi",
+    "batch": "S24",
+    "description": "Corgi is building an AI insurance company",
+    "company_link": "https://www.workatastartup.com/companies/corgi",
+    "job_name": "Paid Gap Year (before college) - Engineering",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Phonely",
+    "batch": "S24",
+    "description": "AI call centers",
+    "company_link": "https://www.workatastartup.com/companies/phonely",
+    "job_name": "Founding Engineer (Backend)",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Backend"
+  },
+  {
+    "company_name": "Phonely",
+    "batch": "S24",
+    "description": "AI call centers",
+    "company_link": "https://www.workatastartup.com/companies/phonely",
+    "job_name": "Founding Forward Deployed Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Entangl",
+    "batch": "S24",
+    "description": "Find & resolve issues in data center engineering & operations using AI",
+    "company_link": "https://www.workatastartup.com/companies/entangl",
+    "job_name": "Full Stack Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Entangl",
+    "batch": "S24",
+    "description": "Find & resolve issues in data center engineering & operations using AI",
+    "company_link": "https://www.workatastartup.com/companies/entangl",
+    "job_name": "Greg Brockman",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Theseus",
+    "batch": "S24",
+    "description": "GPS Denied Navigation for Drones",
+    "company_link": "https://www.workatastartup.com/companies/theseus",
+    "job_name": "Founding Senior Localization Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Robotics"
+  },
+  {
+    "company_name": "Theseus",
+    "batch": "S24",
+    "description": "GPS Denied Navigation for Drones",
+    "company_link": "https://www.workatastartup.com/companies/theseus",
+    "job_name": "Founding Embedded Software Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Embedded systems"
+  },
+  {
+    "company_name": "Variant",
+    "batch": "F24",
+    "description": "Building the state-of-the-art model for software design",
+    "company_link": "https://www.workatastartup.com/companies/variant",
+    "job_name": "Founding Frontend Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Frontend"
+  },
+  {
+    "company_name": "Powder",
+    "batch": "W24",
+    "description": "AI Agents for precise document analysis",
+    "company_link": "https://www.workatastartup.com/companies/powder",
+    "job_name": "Founding Full Stack Engineer",
+    "job_type": "fulltime",
+    "location": "Redwood City, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "CommodityAI",
+    "batch": "W24",
+    "description": "AI & Automation Software Powering Physical Commodity Trading",
+    "company_link": "https://www.workatastartup.com/companies/commodityai",
+    "job_name": "Founding Engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Retell AI",
+    "batch": "W24",
+    "description": "Supercharge Your Contact Center Operations with AI Phone Agents",
+    "company_link": "https://www.workatastartup.com/companies/retell-ai",
+    "job_name": "Founding Senior Software Engineer (Forward Deployed)",
+    "job_type": "fulltime",
+    "location": "Redwood City, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Retell AI",
+    "batch": "W24",
+    "description": "Supercharge Your Contact Center Operations with AI Phone Agents",
+    "company_link": "https://www.workatastartup.com/companies/retell-ai",
+    "job_name": "Founding Senior Software Engineer (Full Stack)",
+    "job_type": "fulltime",
+    "location": "Redwood City, CA, US",
+    "tech_stack": "Full stack"
+  },
+  {
+    "company_name": "Stacksync",
+    "batch": "W24",
+    "description": "Real-time and two-way sync between CRMs and Databases",
+    "company_link": "https://www.workatastartup.com/companies/stacksync",
+    "job_name": "Full-stack engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US / Lausanne, VD, CH / FR / Remote (FR; CH; IT; DE; US)",
+    "tech_stack": "Full stack"
+  }
+]
