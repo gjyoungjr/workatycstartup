@@ -130,29 +130,34 @@ def get_company_founders(job_listings):
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
                 
                 # Look for founder section - this will need to be adjusted based on the actual HTML structure
-                founder_section = soup.find('div', class_='flex flex-col md:flex-row') or soup.find('section', string=lambda t: 'founder' in t.lower() if t else False)
+                founder_section = soup.find('div', class_='flex flex-col md:flex-row')
                 
                 founders = []
                 if founder_section:
-                    # Extract founder profiles - adjust selectors based on actual HTML
+                    # Extract founder profiles
                     founder_elements = founder_section.find_all('div', class_='ml-2 w-full sm:ml-9')
-                    pprint(founder_elements)
                     
-                    # for element in founder_elements:
-                    #     founder_info = {}
-                    #     name_elem = element.find('h3') or element.find('div', class_='name')
-                    #     if name_elem:
-                    #         founder_info['name'] = name_elem.text.strip()
+                    for element in founder_elements:
+                        founder_info = {}
                         
-                    #     title_elem = element.find('div', class_='title')
-                    #     if title_elem:
-                    #         founder_info['title'] = title_elem.text.strip()
+                        # Extract name
+                        name_elem = element.find('div', class_='mb-1 font-medium')
+                        if name_elem:
+                            # Get the text content without the LinkedIn link
+                            name_text = name_elem.contents[0]
+                            founder_info['name'] = name_text.strip()
                         
-                    #     bio_elem = element.find('div', class_='bio')
-                    #     if bio_elem:
-                    #         founder_info['bio'] = bio_elem.text.strip()
+                        # Extract LinkedIn URL
+                        linkedin_elem = element.find('a', class_='fa fa-linkedin ml-4 p-1 text-blue-600')
+                        if linkedin_elem and 'href' in linkedin_elem.attrs:
+                            founder_info['linkedin_url'] = linkedin_elem['href']
                         
-                    #     founders.append(founder_info)
+                        # Extract bio
+                        bio_elem = element.find('div', class_='sm:text-md w-full text-sm')
+                        if bio_elem:
+                            founder_info['bio'] = bio_elem.text.strip()
+                        
+                        founders.append(founder_info)
                 
                 # Add founders to the job listing
                 job['founders'] = founders
@@ -164,7 +169,8 @@ def get_company_founders(job_listings):
     finally:
         driver.quit()
     
-    return job_listings    
+    return job_listings
+
 def main():
     # Scrape and parse job listings
     url = "https://www.workatastartup.com/jobs"
@@ -180,15 +186,14 @@ def main():
         job_listings.append(job_listing)    
         
     enhanced_job_listing = get_company_founders(job_listings)
-    # print(enhanced_job_listing)
 
     # Save results to JSON
-    # save_to_json(job_listings)
+    save_to_json(job_listings)
 
-    # # Optionally print a sample job listing
-    # if job_listings:
-    #     print("\nSample job listing:")
-    #     print(json.dumps(job_listings[0], indent=2))
+    # Optionally print a sample job listing
+    if job_listings:
+        print("\nSample job listing:")
+        print(json.dumps(job_listings[0], indent=2))
 
 if __name__ == "__main__":
     main()

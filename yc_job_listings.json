@@ -8,7 +8,13 @@
     "job_link": "https://www.ycombinator.com/companies/snapmagic/jobs/cU7g2O2-lead-principal-engineer",
     "job_type": "fulltime",
     "location": "Redwood City, CA, US",
-    "tech_stack": "Backend"
+    "tech_stack": "Backend",
+    "founders": [
+      {
+        "name": "Natasha Baker",
+        "linkedin_url": "https://www.linkedin.com/in/natashaabaker"
+      }
+    ]
   },
   {
     "company_name": "Wefunder",
@@ -19,7 +25,18 @@
     "job_link": "https://www.ycombinator.com/companies/wefunder/jobs/oC8Vfe1-full-stack-senior-software-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Greg Belote",
+        "linkedin_url": "https://www.linkedin.com/in/gregbelote/"
+      },
+      {
+        "name": "Nick Tommarello",
+        "linkedin_url": "https://www.linkedin.com/in/nicktommarello/",
+        "bio": "CEO, Wefunder"
+      }
+    ]
   },
   {
     "company_name": "Helpcare AI",
@@ -30,7 +47,14 @@
     "job_link": "https://www.ycombinator.com/companies/helpcare-ai/jobs/iuk6sAt-senior-fullstack-engineer",
     "job_type": "fulltime",
     "location": "US / CA / MX / BR / AR / BY / UY / PL / EC / CR / PA / CL / CO / RO / PE / BG / Remote (US; CA; MX; BR; AR; BY; UY; PL; EC; CR; PA; CL; CO; RO; PE; BG)",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Huzaifa Sial",
+        "linkedin_url": "https://www.linkedin.com/in/hsial/",
+        "bio": "Founder and CEO of Helpcare AI.\n\nHuzaifa has a Masters in Clinical Informatics form Northwestern and has spent 14+ yrs building Healthcare AI solutions like disease prediction, DME optimization, patient engagement, care delivery search and behavioral engines for care gap closures, for some of the largest Payers & Providers. He has authored 4 Health AI Patents.\n\nPreviously, Huzaifa led AI Solutions @ United Healthcare & Optum and was part of 2 healthcare AI exits."
+      }
+    ]
   },
   {
     "company_name": "Sphinx",
@@ -41,18 +65,19 @@
     "job_link": "https://www.ycombinator.com/companies/sphinx/jobs/mlOP28j-founding-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Backend"
-  },
-  {
-    "company_name": "SimCare AI",
-    "batch": "S24",
-    "description": "Conversations with AI patients to scale healthcare training.",
-    "company_link": "https://www.workatastartup.com/companies/simcare-ai",
-    "job_name": "Founding Engineer",
-    "job_link": "https://www.ycombinator.com/companies/simcare-ai/jobs/PZed3Sb-founding-engineer",
-    "job_type": "fulltime",
-    "location": "San Francisco, CA, US / Remote (US)",
-    "tech_stack": "Full stack"
+    "tech_stack": "Backend",
+    "founders": [
+      {
+        "name": "Alexandre Berkovic",
+        "linkedin_url": "https://linkedin.com/in/alexandreberkovic",
+        "bio": "Co-founder and CEO of Sphinx. Previously co-founded Adorno AI, developing audio generation models for video. Studied Design Engineering at Imperial College and Machine Learning at MIT."
+      },
+      {
+        "name": "Chrisjan Wust",
+        "linkedin_url": "https://linkedin.com/in/chrisjan-wust",
+        "bio": "Co-founder and CTO of Sphinx. Previously co-founded Adorno AI, developing video-to-audio models, and served as Head of ML at RelyComply, where I helped scale the company from $0-12M ARR and secured a deal with Africa\u2019s largest bank. Metal + tea = code. Originally from Cape Town \ud83c\uddff\ud83c\udde6"
+      }
+    ]
   },
   {
     "company_name": "SimCare AI",
@@ -63,7 +88,42 @@
     "job_link": "https://www.ycombinator.com/companies/simcare-ai/jobs/KowU0FS-ex-founder",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Tiko Bdoyan",
+        "linkedin_url": "https://www.linkedin.com/in/tigran-bdoyan/details/experience/",
+        "bio": "Founder at Soma Lab passionate about educational technology and the future of learning. Previously, I was a Machine Learning researcher and a varsity wrestler at the University of Chicago."
+      },
+      {
+        "name": "Vrishank Saini",
+        "linkedin_url": "https://www.linkedin.com/in/vrishanksaini/",
+        "bio": "Vrishank Saini is a University of Chicago neuroscience undergrad with a knack for blending neuroscience and computer science to drive innovation in medical education. As the founder of Bioscope Wellness and Soma Lab, he's not just studying cross-disciplinary subjects\u2014he's applying them, evidenced by his development of a mental health app that garnered national coverage and over 120,000 downloads."
+      }
+    ]
+  },
+  {
+    "company_name": "SimCare AI",
+    "batch": "S24",
+    "description": "Conversations with AI patients to scale healthcare training.",
+    "company_link": "https://www.workatastartup.com/companies/simcare-ai",
+    "job_name": "Founding Engineer",
+    "job_link": "https://www.ycombinator.com/companies/simcare-ai/jobs/PZed3Sb-founding-engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US / Remote (US)",
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Tiko Bdoyan",
+        "linkedin_url": "https://www.linkedin.com/in/tigran-bdoyan/details/experience/",
+        "bio": "Founder at Soma Lab passionate about educational technology and the future of learning. Previously, I was a Machine Learning researcher and a varsity wrestler at the University of Chicago."
+      },
+      {
+        "name": "Vrishank Saini",
+        "linkedin_url": "https://www.linkedin.com/in/vrishanksaini/",
+        "bio": "Vrishank Saini is a University of Chicago neuroscience undergrad with a knack for blending neuroscience and computer science to drive innovation in medical education. As the founder of Bioscope Wellness and Soma Lab, he's not just studying cross-disciplinary subjects\u2014he's applying them, evidenced by his development of a mental health app that garnered national coverage and over 120,000 downloads."
+      }
+    ]
   },
   {
     "company_name": "Voker",
@@ -74,7 +134,19 @@
     "job_link": "https://www.ycombinator.com/companies/voker/jobs/XCcmcEk-founding-full-stack-ai-software-engineer",
     "job_type": "fulltime",
     "location": "Los Angeles, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Tyler Postle",
+        "linkedin_url": "https://www.linkedin.com/in/tyler-postle/",
+        "bio": "Co-Founder of Voker. In previous roles, I've built applied data products that drive growth. I was an operator of a $100MM DTC ecomm company and ran revenue growth data science for a $10B public SaaS company. I'm passionate about building high performing teams and continuously learning."
+      },
+      {
+        "name": "Alex Rudolph",
+        "linkedin_url": "https://www.linkedin.com/in/alex-r-87470a198/",
+        "bio": "Co-Founder of Voker, the Self-Serve AI Builder for Product Teams"
+      }
+    ]
   },
   {
     "company_name": "Conveo",
@@ -85,7 +157,19 @@
     "job_link": "https://www.ycombinator.com/companies/conveo/jobs/OcMOJXI-senior-full-stack-engineer-react-typescript",
     "job_type": "fulltime",
     "location": "Antwerp, Flanders, BE",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Dieter De Mesmaeker",
+        "linkedin_url": "https://www.linkedin.com/in/dieterdemesmaeker/",
+        "bio": "Co-Founder & CTO @Conveo.ai, previously Co-Founder & CTO @Datacamp.com (+$60m ARR)"
+      },
+      {
+        "name": "Hendrik Van Hove",
+        "linkedin_url": "https://linkedin.com/in/hendrik-van-hove",
+        "bio": "Belgian, 26, passionate about tech and (kite-) surfing.\nBuilding Conveo.ai, qualitative research at scale with AI interviews and analysis.\nWorked at McKinsey in tech/AI and private equity projects. Background in finance with internships at Morgan Stanley (IBD), Lazard (IBD), PE.\nMSc Business Engineering and MSc Artificial Intelligence (majority coursework, did not graduate)."
+      }
+    ]
   },
   {
     "company_name": "Kastle",
@@ -96,7 +180,19 @@
     "job_link": "https://www.ycombinator.com/companies/kastle/jobs/ItDVKB7-founding-engineer-at-kastle-s24",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Rishi Choudhary",
+        "linkedin_url": "https://www.linkedin.com/in/choudharyrishi/",
+        "bio": "Rishi is the co-founder and CEO of Kastle (www.kastle.ai)\n\nBefore Kastle, Rishi was the founding Product Manager for Redfin\u2019s Mortgage Marketplace at age 22 and grew the business from $3M to $6M in revenue in 9 months. He also led Redfin's Search Experience team responsible for 80% of the company's traffic. \n\nRishi has a BS in Systems Engineering from the University of Illinois at Urbana Champaign. At UIUC, Rishi ran the largest US student consulting club with 250 students and $500K ARR"
+      },
+      {
+        "name": "Nitish Poddar",
+        "linkedin_url": "https://www.linkedin.com/in/nitish-poddar/",
+        "bio": "Nitish is the co-founder and CTO of Kastle (kastle.ai). Before Kastle, Nitish was a tech lead at Verkada, where he led development for a patented motion search system and built out the entire backend inference infrastructure. He also led the firmware delivery team on a new fleet management system and led engineering for Incident Management, Verkada's newest product line. Nitish graduated from UIUC with a degree in Computer Science."
+      }
+    ]
   },
   {
     "company_name": "Kastle",
@@ -107,7 +203,19 @@
     "job_link": "https://www.ycombinator.com/companies/kastle/jobs/XSq5nJT-founding-applied-ai-engineer-at-kastle",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Backend"
+    "tech_stack": "Backend",
+    "founders": [
+      {
+        "name": "Rishi Choudhary",
+        "linkedin_url": "https://www.linkedin.com/in/choudharyrishi/",
+        "bio": "Rishi is the co-founder and CEO of Kastle (www.kastle.ai)\n\nBefore Kastle, Rishi was the founding Product Manager for Redfin\u2019s Mortgage Marketplace at age 22 and grew the business from $3M to $6M in revenue in 9 months. He also led Redfin's Search Experience team responsible for 80% of the company's traffic. \n\nRishi has a BS in Systems Engineering from the University of Illinois at Urbana Champaign. At UIUC, Rishi ran the largest US student consulting club with 250 students and $500K ARR"
+      },
+      {
+        "name": "Nitish Poddar",
+        "linkedin_url": "https://www.linkedin.com/in/nitish-poddar/",
+        "bio": "Nitish is the co-founder and CTO of Kastle (kastle.ai). Before Kastle, Nitish was a tech lead at Verkada, where he led development for a patented motion search system and built out the entire backend inference infrastructure. He also led the firmware delivery team on a new fleet management system and led engineering for Incident Management, Verkada's newest product line. Nitish graduated from UIUC with a degree in Computer Science."
+      }
+    ]
   },
   {
     "company_name": "Tivara",
@@ -118,7 +226,19 @@
     "job_link": "https://www.ycombinator.com/companies/tivara/jobs/6Hhb9Oo-founding-product-engineer",
     "job_type": "fulltime",
     "location": "New York, NY, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Aumesh Misra",
+        "linkedin_url": "https://linkedin.com/in/aumesh-misra",
+        "bio": "Co-founder and CTO of Tivara. I've spent 4 years building software at Microsoft and Compound (YC S19). I was the 8th engineer at Compound and helped grow the company to over $2B AUM. Prior to this, I researched and developed software for novel medical imaging devices at Stanford."
+      },
+      {
+        "name": "Tej Seelamsetty",
+        "linkedin_url": "https://linkedin.com/in/tej-seelamsetty",
+        "bio": "Founder and CEO of Tivara.\n\nI started my entrepreneurship journey at 18 years old: As soon as I could sign a personal guarantee, I started flipping houses to (successfully) pay for college. Building software to automate the tedious aspects of my own due diligence opened my eyes to the magic of code. Since then, I led growth (10x-ed revenue) at Fair Square (W20) and worked as a consultant at Bain. I studied computer science and financial engineering at WashU."
+      }
+    ]
   },
   {
     "company_name": "Silurian",
@@ -129,18 +249,47 @@
     "job_link": "https://www.ycombinator.com/companies/silurian/jobs/67uBjLX-machine-learning-research-engineer-scientist",
     "job_type": "fulltime",
     "location": "London, England, GB",
-    "tech_stack": "Machine learning"
+    "tech_stack": "Machine learning",
+    "founders": [
+      {
+        "name": "Cristian Bodnar",
+        "linkedin_url": "https://www.linkedin.com/in/crisbodnar/",
+        "bio": "Chief Scientist of Silurian. I was previously a Senior Researcher at Microsoft Research where I co-lead the development of the Aurora foundation model. During my PhD at Cambridge, I've also spent time in top AI industry labs like Google Brain, Google X and Twitter Cortex."
+      },
+      {
+        "name": "Jayesh K. Gupta",
+        "linkedin_url": "https://www.linkedin.com/in/jayeshkg/",
+        "bio": "Jayesh is Co-founder and CEO of Silurian AI. Previously he was the Head of AI at Poly Corporation. He led the development of the first foundation model for weather & climate as researcher at Microsoft and was the co-author of Aurora. Jayesh holds a Ph.D. in CS from Stanford."
+      },
+      {
+        "name": "Nikhil Shankar",
+        "linkedin_url": "https://www.linkedin.com/in/nikhil-shankar-3090131b7/",
+        "bio": "Nikhil is a co-founder and chief engineer at Silurian AI. Previously he was a software engineer at AWS SageMaker and prior to that he dropped out of his PhD in applied mathematics where he was working on problems in fluid dynamics."
+      }
+    ]
   },
   {
     "company_name": "Wordware",
     "batch": "S24",
     "description": "IDE to develop, iterate and deploy AI Agents",
     "company_link": "https://www.workatastartup.com/companies/wordware",
-    "job_name": "DevRel engineer",
-    "job_link": "https://www.ycombinator.com/companies/wordware/jobs/Hk3pqc5-devrel-engineer",
+    "job_name": "engineering",
+    "job_link": "https://www.ycombinator.com/companies/wordware/jobs/NXAEgOb-engineering",
     "job_type": "fulltime",
     "location": "San Francisco",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Robert Chandler",
+        "linkedin_url": "https://linkedin.com/in/robertjhchandler",
+        "bio": "Robert Chandler is a founder & CTO at Wordware. \n\nHe started his career as an early engineer at a self-driving car startup, Five AI, which was acquired by Bosch. Here he lead the Offline Perception team which accelerated the dev-test cycle through automated ground truthing and was awarded 5+ patents in the process.\n\nHe has been in the AI space for over a decade since studying Information Engineering at the University of Cambridge."
+      },
+      {
+        "name": "Filip Kozera",
+        "linkedin_url": "https://linkedin.com/in/filipkozera",
+        "bio": "Cofounder and CEO at Wordware -- an IDE for Natural Language Programming and Agent Orchestration. Previously I cofounded and exited KRISTALIC, which tried to augment the human memory. Before that, I studied Deep Learning at Cambridge. \n\nThe most interesting fact about me outside of work is that I travelled to 103 countries and was part of multiple high-altitude mountaineering expeditions and rescue operations in Kyrgyzstan and Nepal. I also do sailing, paragliding, kitesurfing and boxing."
+      }
+    ]
   },
   {
     "company_name": "Wordware",
@@ -151,7 +300,42 @@
     "job_link": "https://www.ycombinator.com/companies/wordware/jobs/rO10pMV-forward-deployed-engineer-or-head-of-customer-coding-skills-necessary",
     "job_type": "fulltime",
     "location": "San Francisco",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Robert Chandler",
+        "linkedin_url": "https://linkedin.com/in/robertjhchandler",
+        "bio": "Robert Chandler is a founder & CTO at Wordware. \n\nHe started his career as an early engineer at a self-driving car startup, Five AI, which was acquired by Bosch. Here he lead the Offline Perception team which accelerated the dev-test cycle through automated ground truthing and was awarded 5+ patents in the process.\n\nHe has been in the AI space for over a decade since studying Information Engineering at the University of Cambridge."
+      },
+      {
+        "name": "Filip Kozera",
+        "linkedin_url": "https://linkedin.com/in/filipkozera",
+        "bio": "Cofounder and CEO at Wordware -- an IDE for Natural Language Programming and Agent Orchestration. Previously I cofounded and exited KRISTALIC, which tried to augment the human memory. Before that, I studied Deep Learning at Cambridge. \n\nThe most interesting fact about me outside of work is that I travelled to 103 countries and was part of multiple high-altitude mountaineering expeditions and rescue operations in Kyrgyzstan and Nepal. I also do sailing, paragliding, kitesurfing and boxing."
+      }
+    ]
+  },
+  {
+    "company_name": "Corgi",
+    "batch": "S24",
+    "description": "Corgi is building an AI insurance company",
+    "company_link": "https://www.workatastartup.com/companies/corgi",
+    "job_name": "Senior Engineer",
+    "job_link": "https://www.ycombinator.com/companies/corgi/jobs/YsjMygb-senior-engineer",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Nico Laqua",
+        "linkedin_url": "https://www.linkedin.com/in/nico-laqua-302b17233",
+        "bio": "CEO/CTO of corgi - we do ai insurance.\n\nI previously founded Basket, a gaming publisher with 200+ million MAU."
+      },
+      {
+        "name": "Emily Yuan",
+        "linkedin_url": "https://www.linkedin.com/in/emilyyuan96",
+        "bio": "Emily is Co-Founder and COO at Corgi \ud83d\udc15 She dropped out of Stanford as a CS undergrad to co-found Basket Entertainment, a gaming company with over 150 games and 200 million monthly players (including around 1 in 3 American teens)."
+      }
+    ]
   },
   {
     "company_name": "Corgi",
@@ -162,29 +346,19 @@
     "job_link": "https://www.ycombinator.com/companies/corgi/jobs/1iSMdrS-golang-developer-full-stack-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
-  },
-  {
-    "company_name": "Corgi",
-    "batch": "S24",
-    "description": "Corgi is building an AI insurance company",
-    "company_link": "https://www.workatastartup.com/companies/corgi",
-    "job_name": "Paid Gap Year (before college) - Engineering",
-    "job_link": "https://www.ycombinator.com/companies/corgi/jobs/HmURH6G-paid-gap-year-before-college-engineering",
-    "job_type": "fulltime",
-    "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
-  },
-  {
-    "company_name": "Phonely",
-    "batch": "S24",
-    "description": "AI call centers",
-    "company_link": "https://www.workatastartup.com/companies/phonely",
-    "job_name": "Founding Forward Deployed Engineer",
-    "job_link": "https://www.ycombinator.com/companies/phonely/jobs/Raj2SfD-founding-forward-deployed-engineer",
-    "job_type": "fulltime",
-    "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Nico Laqua",
+        "linkedin_url": "https://www.linkedin.com/in/nico-laqua-302b17233",
+        "bio": "CEO/CTO of corgi - we do ai insurance.\n\nI previously founded Basket, a gaming publisher with 200+ million MAU."
+      },
+      {
+        "name": "Emily Yuan",
+        "linkedin_url": "https://www.linkedin.com/in/emilyyuan96",
+        "bio": "Emily is Co-Founder and COO at Corgi \ud83d\udc15 She dropped out of Stanford as a CS undergrad to co-found Basket Entertainment, a gaming company with over 150 games and 200 million monthly players (including around 1 in 3 American teens)."
+      }
+    ]
   },
   {
     "company_name": "Phonely",
@@ -195,7 +369,42 @@
     "job_link": "https://www.ycombinator.com/companies/phonely/jobs/YIcOA27-founding-engineer-backend",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Backend"
+    "tech_stack": "Backend",
+    "founders": [
+      {
+        "name": "Will Bodewes",
+        "linkedin_url": "https://www.linkedin.com/in/william-bodewes/",
+        "bio": "Will Bodewes is the co-founder and CEO of Phonely. \n\nPrior to starting Phonely, he was pursuing a PhD at the University of Melbourne researching applied artificial intelligence applications.  Before that, he founded an audio-tech startup that garnished celebrity engagement from Chance the Rapper, the band ASIA and more. During college, he competed in the NCAA's for XC skiing, and was one of the top ultra-endurance cyclists in the world."
+      },
+      {
+        "name": "Nisal Ranasinghe",
+        "linkedin_url": "https://www.linkedin.com/in/nisalr",
+        "bio": "Nisal is the Co-founder and CTO of Phonely. With a background in Electronic and Telecommunications Engineering, he worked as a senior engineer in the AI team of a major telecommunications company for nearly three years, where he led projects on advanced AI solutions. Nisal then pursued a PhD at the University of Melbourne, focusing on explainable AI and AI for healthcare."
+      }
+    ]
+  },
+  {
+    "company_name": "Phonely",
+    "batch": "S24",
+    "description": "AI call centers",
+    "company_link": "https://www.workatastartup.com/companies/phonely",
+    "job_name": "Founding Engineer (Full Stack + Dev Ops)",
+    "job_link": "https://www.ycombinator.com/companies/phonely/jobs/cfkxRUA-founding-engineer-full-stack-dev-ops",
+    "job_type": "fulltime",
+    "location": "San Francisco, CA, US",
+    "tech_stack": "Devops",
+    "founders": [
+      {
+        "name": "Will Bodewes",
+        "linkedin_url": "https://www.linkedin.com/in/william-bodewes/",
+        "bio": "Will Bodewes is the co-founder and CEO of Phonely. \n\nPrior to starting Phonely, he was pursuing a PhD at the University of Melbourne researching applied artificial intelligence applications.  Before that, he founded an audio-tech startup that garnished celebrity engagement from Chance the Rapper, the band ASIA and more. During college, he competed in the NCAA's for XC skiing, and was one of the top ultra-endurance cyclists in the world."
+      },
+      {
+        "name": "Nisal Ranasinghe",
+        "linkedin_url": "https://www.linkedin.com/in/nisalr",
+        "bio": "Nisal is the Co-founder and CTO of Phonely. With a background in Electronic and Telecommunications Engineering, he worked as a senior engineer in the AI team of a major telecommunications company for nearly three years, where he led projects on advanced AI solutions. Nisal then pursued a PhD at the University of Melbourne, focusing on explainable AI and AI for healthcare."
+      }
+    ]
   },
   {
     "company_name": "Entangl",
@@ -203,21 +412,45 @@
     "description": "Find & resolve issues in data center engineering & operations using AI",
     "company_link": "https://www.workatastartup.com/companies/entangl",
     "job_name": "Full Stack Engineer",
-    "job_link": "https://www.ycombinator.com/companies/entangl/jobs/eXa7z60-full-stack-engineer",
+    "job_link": "https://www.ycombinator.com/companies/entangl/jobs/2Yyvqxs-full-stack-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Shapol M",
+        "linkedin_url": "https://linkedin.com/in/shapol",
+        "bio": "Co-founder & CEO at Entangl."
+      },
+      {
+        "name": "Antanas Zilinskas",
+        "linkedin_url": "https://www.linkedin.com/in/antanaszilinskas",
+        "bio": "Co-founder and CTO at Entangl."
+      }
+    ]
   },
   {
     "company_name": "Entangl",
     "batch": "S24",
     "description": "Find & resolve issues in data center engineering & operations using AI",
     "company_link": "https://www.workatastartup.com/companies/entangl",
-    "job_name": "Forward Deployed Software Engineer",
-    "job_link": "https://www.ycombinator.com/companies/entangl/jobs/G4YCOng-forward-deployed-software-engineer",
+    "job_name": "Greg Brockman",
+    "job_link": "https://www.ycombinator.com/companies/entangl/jobs/laWhXAN-greg-brockman",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Shapol M",
+        "linkedin_url": "https://linkedin.com/in/shapol",
+        "bio": "Co-founder & CEO at Entangl."
+      },
+      {
+        "name": "Antanas Zilinskas",
+        "linkedin_url": "https://www.linkedin.com/in/antanaszilinskas",
+        "bio": "Co-founder and CTO at Entangl."
+      }
+    ]
   },
   {
     "company_name": "Theseus",
@@ -228,7 +461,24 @@
     "job_link": "https://www.ycombinator.com/companies/theseus/jobs/rXUMY8g-founding-senior-localization-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Robotics"
+    "tech_stack": "Robotics",
+    "founders": [
+      {
+        "name": "Ian Laffey",
+        "linkedin_url": "https://linkedin.com/in/ian-laffey-943200247",
+        "bio": "GPS-denied nav for drones"
+      },
+      {
+        "name": "Sacha Levy",
+        "linkedin_url": "https://linkedin.com/in/sacha-levy",
+        "bio": "UAV nav in gps denied environments."
+      },
+      {
+        "name": "Carl Schoeller",
+        "linkedin_url": "https://www.linkedin.com/in/carlscho",
+        "bio": "Building Theseus \u2013 defense systems independent of GPS. Before that designed and built around 2000 unique parts. Some of those are in mass production on Tesla Cybertruck and some in an Apple product."
+      }
+    ]
   },
   {
     "company_name": "Theseus",
@@ -239,18 +489,47 @@
     "job_link": "https://www.ycombinator.com/companies/theseus/jobs/iVNdUWO-founding-localization-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Robotics"
+    "tech_stack": "Robotics",
+    "founders": [
+      {
+        "name": "Ian Laffey",
+        "linkedin_url": "https://linkedin.com/in/ian-laffey-943200247",
+        "bio": "GPS-denied nav for drones"
+      },
+      {
+        "name": "Sacha Levy",
+        "linkedin_url": "https://linkedin.com/in/sacha-levy",
+        "bio": "UAV nav in gps denied environments."
+      },
+      {
+        "name": "Carl Schoeller",
+        "linkedin_url": "https://www.linkedin.com/in/carlscho",
+        "bio": "Building Theseus \u2013 defense systems independent of GPS. Before that designed and built around 2000 unique parts. Some of those are in mass production on Tesla Cybertruck and some in an Apple product."
+      }
+    ]
   },
   {
     "company_name": "Variant",
     "batch": "F24",
     "description": "Building the state-of-the-art model for software design",
     "company_link": "https://www.workatastartup.com/companies/variant",
-    "job_name": "Founding Frontend Engineer",
-    "job_link": "https://www.ycombinator.com/companies/variant/jobs/ZEEFZxK-founding-frontend-engineer",
+    "job_name": "Founding Frontend Engineer (Staff)",
+    "job_link": "https://www.ycombinator.com/companies/variant/jobs/ZEEFZxK-founding-frontend-engineer-staff",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Frontend"
+    "tech_stack": "Frontend",
+    "founders": [
+      {
+        "name": "Daniel Bulhosa Solorzano",
+        "linkedin_url": "https://www.linkedin.com/in/dbulhosa/",
+        "bio": "Formerly led simulation & testing for emergency vehicle, human controlling traffic, and school bus interactions at Cruise. Worked on generative AI for simulating road actor behavior in the same. Previously led machine learning at the Square Ecommerce team, where he built the ML features of the Photo Studio mobile app and the PDF to catalog importer feature."
+      },
+      {
+        "name": "Benjamin South Lee",
+        "linkedin_url": "https://linkedin.com/in/hoopla",
+        "bio": "Building Variant. Formerly founded two companies which were acquired by Postmates, where I was VP of Product Design, and Avara, where I was SVP of Product and Design. \n\nExperiments: bensouth.com"
+      }
+    ]
   },
   {
     "company_name": "Powder",
@@ -261,7 +540,29 @@
     "job_link": "https://www.ycombinator.com/companies/powder/jobs/nPIU29b-founding-full-stack-engineer",
     "job_type": "fulltime",
     "location": "Redwood City, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Soo Yung Cho",
+        "linkedin_url": "https://linkedin.com/in/soo-yung-cho-53643811",
+        "bio": "Sooyung is the co-founder and CTO of Powder, AI sales copilot for wealth advisors. Prior to founding Powder, Sooyung was a founding team member of RCI which was acquired by Addepar in 2021. Sooyung graduated from Johns Hopkins with a BS degree in Computer Science. Out of work, he enjoys playing lacrosse."
+      },
+      {
+        "name": "David Goerz",
+        "linkedin_url": "https://linkedin.com/in/davidgoerz3",
+        "bio": "Co-founder & Chief Investment Officer for Powder Finance, which is building an AI Sales co-Pilot for wealth advisors to automate gathering financial holdings, analyze portfolios, assess risk tolerance, and summarize data to engage faster and efficiently.\n\nHe managed portfolio strategies for institutional asset owners for 33 yrs on mandates up to $30B in assets with pioneering innovations in quantitative equity and return forecasting, optimization and risk management. Chair, Investment Committees"
+      },
+      {
+        "name": "Kanishk Parashar",
+        "linkedin_url": "https://linkedin.com/in/diamondk",
+        "bio": "cofounder/CEO Powder - AI growth platform for wealth advisors.  Previously, I was cofounder/CEO of RCI Navigator.  Navigator helps asset and wealth managers to pace into private assets such as VC, PE, Infra, etc. while taking risks into account.  It was acquired by Addepar in Jan 2021.  Navigator is used by 150+ firms including UBS and Morgan Stanley.  Before that I was cofounder/CEO of Coin (YCW13).  Coin was a all-in-one digital credit card that combined all your cards into one."
+      },
+      {
+        "name": "Dominic Tully",
+        "linkedin_url": "https://linkedin.com/in/dominic-tully-b9418292",
+        "bio": "I am currently the co-founder and Head of Sales and Operations at Powder. Prior to Powder, I work at the fintech firm, Addepar, as both a Senior Account Executive and Senior Account Manager. I started my career at Goldman Sachs, where I worked in the Private Wealth Management division in San Francisco."
+      }
+    ]
   },
   {
     "company_name": "CommodityAI",
@@ -272,7 +573,24 @@
     "job_link": "https://www.ycombinator.com/companies/commodityai/jobs/yZkCefX-founding-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Daniel Cervoni",
+        "linkedin_url": "https://www.linkedin.com/in/dcervoni/",
+        "bio": "Head of Engineering & Co-Founder at CommodityAI"
+      },
+      {
+        "name": "Kyle Franz",
+        "linkedin_url": "https://linkedin.com/in/kyle-manuel-franz-7a4351a8",
+        "bio": "CTO & Co-Founder at CommodityAI"
+      },
+      {
+        "name": "Philip Koenig",
+        "linkedin_url": "https://linkedin.com/in/philipkoenig",
+        "bio": "CEO & Cofounder at CommodityAI"
+      }
+    ]
   },
   {
     "company_name": "Retell AI",
@@ -283,7 +601,34 @@
     "job_link": "https://www.ycombinator.com/companies/retell-ai/jobs/1okdYK9-founding-senior-software-engineer-forward-deployed",
     "job_type": "fulltime",
     "location": "Redwood City, CA, US",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Todd Li",
+        "linkedin_url": "https://linkedin.com/in/zhengtaoli",
+        "bio": "Todd is the founder of several venture-backed startups. Before his startup journey at Retell, Todd worked at Google Ads as a software engineer."
+      },
+      {
+        "name": "Evie Wang",
+        "linkedin_url": "https://linkedin.com/in/yanwang131415",
+        "bio": "Evie is the Co-founder and CMO of Retell AI\nShe has a design background and a deep understanding of B2B business as she spent 3 years as a Product Designer at Bytedance."
+      },
+      {
+        "name": "Bing Wu",
+        "linkedin_url": "https://linkedin.com/in/binw",
+        "bio": "Co-founder & CEO at Retell AI.\nEnthusiastic about the human brain and AI, Bing spent three years as a product manager at ByteDance/TikTok, where he led B2B and consumer products that delighted billions.\n\nBefore joining ByteDance/TikTok, Bing founded two investor-backed startups in college, generating six-figure revenues."
+      },
+      {
+        "name": "Weijia Yu",
+        "linkedin_url": "https://linkedin.com/in/weijia-y-76b816194",
+        "bio": "Weijia excels in product and software development, with a specialization in machine learning. At Meta, he spent three years as a PM hybrid Tech Lead within Facebook product team.\n\nPrior to Meta, Weijia led app development at ObEN, a Series B AI tech startup, providing full-stack AI solutions including TTS(text-to-speech), computer vision and chatbot."
+      },
+      {
+        "name": "Zexia Zhang",
+        "linkedin_url": "https://linkedin.com/in/zexia-zhang-171480133",
+        "bio": "Zexia is the co-founder and CTO of Retell AI. Passionate about ML, Zexia is always at the frontier of advancing speech technologies. Before Retell, Zexia spent four years at Google where he led the development of next-gen speech translation experience, and NLP solutions for call analysis."
+      }
+    ]
   },
   {
     "company_name": "Retell AI",
@@ -294,7 +639,34 @@
     "job_link": "https://www.ycombinator.com/companies/retell-ai/jobs/3yPgfmB-founding-senior-software-engineer-backend",
     "job_type": "fulltime",
     "location": "Redwood City, CA, US",
-    "tech_stack": "Backend"
+    "tech_stack": "Backend",
+    "founders": [
+      {
+        "name": "Todd Li",
+        "linkedin_url": "https://linkedin.com/in/zhengtaoli",
+        "bio": "Todd is the founder of several venture-backed startups. Before his startup journey at Retell, Todd worked at Google Ads as a software engineer."
+      },
+      {
+        "name": "Evie Wang",
+        "linkedin_url": "https://linkedin.com/in/yanwang131415",
+        "bio": "Evie is the Co-founder and CMO of Retell AI\nShe has a design background and a deep understanding of B2B business as she spent 3 years as a Product Designer at Bytedance."
+      },
+      {
+        "name": "Bing Wu",
+        "linkedin_url": "https://linkedin.com/in/binw",
+        "bio": "Co-founder & CEO at Retell AI.\nEnthusiastic about the human brain and AI, Bing spent three years as a product manager at ByteDance/TikTok, where he led B2B and consumer products that delighted billions.\n\nBefore joining ByteDance/TikTok, Bing founded two investor-backed startups in college, generating six-figure revenues."
+      },
+      {
+        "name": "Weijia Yu",
+        "linkedin_url": "https://linkedin.com/in/weijia-y-76b816194",
+        "bio": "Weijia excels in product and software development, with a specialization in machine learning. At Meta, he spent three years as a PM hybrid Tech Lead within Facebook product team.\n\nPrior to Meta, Weijia led app development at ObEN, a Series B AI tech startup, providing full-stack AI solutions including TTS(text-to-speech), computer vision and chatbot."
+      },
+      {
+        "name": "Zexia Zhang",
+        "linkedin_url": "https://linkedin.com/in/zexia-zhang-171480133",
+        "bio": "Zexia is the co-founder and CTO of Retell AI. Passionate about ML, Zexia is always at the frontier of advancing speech technologies. Before Retell, Zexia spent four years at Google where he led the development of next-gen speech translation experience, and NLP solutions for call analysis."
+      }
+    ]
   },
   {
     "company_name": "Stacksync",
@@ -305,6 +677,18 @@
     "job_link": "https://www.ycombinator.com/companies/stacksync/jobs/rH8hcby-full-stack-engineer",
     "job_type": "fulltime",
     "location": "San Francisco, CA, US / Lausanne, VD, CH / FR / Remote (FR; CH; IT; DE; US)",
-    "tech_stack": "Full stack"
+    "tech_stack": "Full stack",
+    "founders": [
+      {
+        "name": "Ruben Burdin",
+        "linkedin_url": "https://linkedin.com/in/ruben-burdin",
+        "bio": "Data movement, CRM and ERP. Currently redefining Enterprise systems integration."
+      },
+      {
+        "name": "Alexis Favre",
+        "linkedin_url": "https://linkedin.com/in/alexis-favre-epfl",
+        "bio": "Building the future of Data Movement! (and baking delicious french bakeries ;)"
+      }
+    ]
   }
 ]
