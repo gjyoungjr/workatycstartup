@@ -171,6 +171,65 @@ def get_company_founders(job_listings):
     
     return job_listings
 
+def get_job_descriptions(job_listings):
+    """Scrape detailed job descriptions from job listing URLs."""
+    driver = configure_webdriver()
+    
+    try:
+        for job in tqdm(job_listings, desc="Scraping job descriptions", unit="job"):
+            if 'job_link' not in job or not job['job_link']:
+                job['detailed_description'] = ""  # No link to scrape
+                continue
+                
+            # Add random delay to avoid rate limiting
+            time.sleep(random.uniform(1, 3))
+            
+            try:
+                driver.get(job['job_link'])
+                wait = WebDriverWait(driver, 10)
+                
+                # Wait for content to load and handle potential loading indicators
+                try:
+                    wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, 'Loader')))
+                except:
+                    pass
+                
+                # Parse the job description information
+                soup = BeautifulSoup(driver.page_source, 'html.parser')
+                
+                # Look for job description section - adjust selector based on actual HTML structure
+                job_description_section = soup.find('div', class_='prose max-w-full')
+                job['description_detailed'] = job_description_section            
+                # if job_description_section:
+                #     # Extract the full job description text
+                #     job['detailed_description'] = job_description_section.text.strip()
+                    
+                #     # You could also extract structured information like:
+                #     # Responsibilities section
+                #     responsibilities = job_description_section.find('div', string=lambda text: text and 'responsibilities' in text.lower())
+                #     if responsibilities and responsibilities.find_next('ul'):
+                #         job['responsibilities'] = [li.text.strip() for li in responsibilities.find_next('ul').find_all('li')]
+                    
+                #     # Requirements section
+                #     requirements = job_description_section.find('div', string=lambda text: text and 'requirements' in text.lower())
+                #     if requirements and requirements.find_next('ul'):
+                #         job['requirements'] = [li.text.strip() for li in requirements.find_next('ul').find_all('li')]
+                    
+                #     # Benefits section
+                #     benefits = job_description_section.find('div', string=lambda text: text and 'benefits' in text.lower())
+                #     if benefits and benefits.find_next('ul'):
+                #         job['benefits'] = [li.text.strip() for li in benefits.find_next('ul').find_all('li')]
+                # else:
+                #     job['detailed_description'] = ""
+                
+            except Exception as e:
+                print(f"Error scraping job description for {job.get('job_name', 'unknown job')} at {job.get('company_name', 'unknown company')}: {str(e)}")
+                job['detailed_description'] = ""  # Empty string for failed scrapes
+    
+    finally:
+        driver.quit()
+    
+    return job_listings
 def main():
     # Scrape and parse job listings
     url = "https://www.workatastartup.com/jobs"
@@ -186,14 +245,17 @@ def main():
         job_listings.append(job_listing)    
         
     enhanced_job_listing = get_company_founders(job_listings)
+    enhanced_job_listing = get_job_descriptions(job_listings)
+    
+    pprint(enhanced_job_listing)
 
     # Save results to JSON
-    save_to_json(job_listings)
+    # save_to_json(enhanced_job_listing)
 
-    # Optionally print a sample job listing
-    if job_listings:
-        print("\nSample job listing:")
-        print(json.dumps(job_listings[0], indent=2))
+    # # Optionally print a sample job listing
+    # if job_listings:
+    #     print("\nSample job listing:")
+    #     print(json.dumps(enhanced_job_listing[0], indent=2))
 
 if __name__ == "__main__":
     main()
