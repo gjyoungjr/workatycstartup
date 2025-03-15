@@ -172,7 +172,7 @@ def get_company_founders(job_listings):
     return job_listings
 
 def get_job_descriptions(job_listings):
-    """Scrape detailed job descriptions from job listing URLs."""
+    """Scrape detailed job descriptions from job listing URLs using a more flexible approach."""
     driver = configure_webdriver()
     
     try:
@@ -188,48 +188,106 @@ def get_job_descriptions(job_listings):
                 driver.get(job['job_link'])
                 wait = WebDriverWait(driver, 10)
                 
-                # Wait for content to load and handle potential loading indicators
-                try:
-                    wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, 'Loader')))
-                except:
-                    pass
+                # Wait for content to load
+                time.sleep(2)  # Simple wait to ensure page loads
                 
-                # Parse the job description information
+                # First, try to find the main content container
+                # This will require some experimentation based on the site structure
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
                 
-                # Look for job description section - adjust selector based on actual HTML structure
-                job_description_section = soup.find('div', class_='prose max-w-full')
-                job['description_detailed'] = job_description_section            
-                # if job_description_section:
-                #     # Extract the full job description text
-                #     job['detailed_description'] = job_description_section.text.strip()
+                # Try several potential selectors for the job description content
+                # This is where you'll need to adapt based on your observations
+                potential_containers = [
+                    soup.find('div', class_=lambda c: c and 'prose' in c),
+                    soup.find('div', class_=lambda c: c and 'job-description' in c),
+                    soup.find('div', class_=lambda c: c and 'description' in c),
+                    soup.find('div', role='main'),
+                    soup.find('main'),
+                    # Add more potential selectors as needed
+                ]
+                
+                # Find the first non-None container
+                container = next((c for c in potential_containers if c), None)
+                
+                # If we found a container, extract its text
+                if container:
+                    # Store the structured content
+                    job['detailed_description_html'] = str(container)
                     
-                #     # You could also extract structured information like:
-                #     # Responsibilities section
-                #     responsibilities = job_description_section.find('div', string=lambda text: text and 'responsibilities' in text.lower())
-                #     if responsibilities and responsibilities.find_next('ul'):
-                #         job['responsibilities'] = [li.text.strip() for li in responsibilities.find_next('ul').find_all('li')]
+                    # Extract sections based on headers (h1, h2, h3, h4, strong)
+                    sections = {}
+                    current_section = "overview"
+                    sections[current_section] = []
                     
-                #     # Requirements section
-                #     requirements = job_description_section.find('div', string=lambda text: text and 'requirements' in text.lower())
-                #     if requirements and requirements.find_next('ul'):
-                #         job['requirements'] = [li.text.strip() for li in requirements.find_next('ul').find_all('li')]
+                    # Recursive function to process nested elements
+                    def extract_content(element, current_section):
+                        for child in element.children:
+                            # Skip empty or non-tag elements
+                            if not hasattr(child, 'name') or not child.name:
+                                continue
+                                
+                            # Check if this is a section header
+                            is_header = child.name in ['h1', 'h2', 'h3', 'h4'] or (child.name == 'p' and child.find('strong'))
+                            
+                            if is_header:
+                                # Get section title from header
+                                if child.name in ['h1', 'h2', 'h3', 'h4']:
+                                    section_title = child.text.strip().lower()
+                                else:
+                                    section_title = child.find('strong').text.strip().lower()
+                                
+                                # Clean up section title
+                                section_title = section_title.replace(':', '').strip()
+                                
+                                # Create new section if it doesn't exist
+                                if section_title not in sections:
+                                    sections[section_title] = []
+                                
+                                # Update current section
+                                return section_title
+                            
+                            # Handle list elements
+                            elif child.name == 'ul' or child.name == 'ol':
+                                for li in child.find_all('li'):
+                                    sections[current_section].append(li.text.strip())
+                            
+                            # Handle paragraphs and other text elements
+                            elif child.name == 'p' or child.name in ['div', 'span']:
+                                # Ignore empty paragraphs
+                                if child.text.strip():
+                                    sections[current_section].append(child.text.strip())
+                            
+                            # Recursively process nested elements
+                            else:
+                                updated_section = extract_content(child, current_section)
+                                if updated_section:
+                                    current_section = updated_section
+                        
+                        return None
                     
-                #     # Benefits section
-                #     benefits = job_description_section.find('div', string=lambda text: text and 'benefits' in text.lower())
-                #     if benefits and benefits.find_next('ul'):
-                #         job['benefits'] = [li.text.strip() for li in benefits.find_next('ul').find_all('li')]
-                # else:
-                #     job['detailed_description'] = ""
+                    # Process the container to extract sections
+                    extract_content(container, current_section)
+                    
+                    # Store the extracted sections
+                    job['detailed_description'] = sections
+                    
+                    # As a fallback, also store the full text
+                    job['full_text'] = container.text.strip()
+                else:
+                    # If we couldn't find a container, store the page title and body text
+                    job['detailed_description'] = {}
+                    job['full_text'] = soup.body.text.strip() if soup.body else ""
                 
             except Exception as e:
                 print(f"Error scraping job description for {job.get('job_name', 'unknown job')} at {job.get('company_name', 'unknown company')}: {str(e)}")
-                job['detailed_description'] = ""  # Empty string for failed scrapes
+                job['detailed_description'] = {}
+                job['full_text'] = ""
     
     finally:
         driver.quit()
     
     return job_listings
+
 def main():
     # Scrape and parse job listings
     url = "https://www.workatastartup.com/jobs"
