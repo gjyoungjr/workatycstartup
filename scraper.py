@@ -305,10 +305,9 @@ def main():
     enhanced_job_listing = get_company_founders(job_listings)
     enhanced_job_listing = get_job_descriptions(job_listings)
     
-    pprint(enhanced_job_listing)
 
     # Save results to JSON
-    # save_to_json(enhanced_job_listing)
+    save_to_json(enhanced_job_listing)
 
     # # Optionally print a sample job listing
     # if job_listings:
