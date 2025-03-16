@@ -1,6 +1,7 @@
 
 from web_scraper.scrapers import scrape_job_listings, scrape_company_founders, scrape_job_descriptions, parse_job_card
-from pprint import pprint
+from utils.helpers import save_to_json
+
 from tqdm import tqdm
 
 YC_JOB_LISTING_URL = "https://www.workatastartup.com/jobs"
@@ -15,7 +16,9 @@ def main():
         job_listings.append(job_listing)    
         
     job_listings = scrape_company_founders(job_listings)
-    job_listings = scrape_job_descriptions(job_listings)    
+    job_listings = scrape_job_descriptions(job_listings) 
+    
+    save_to_json(job_listings)  
   
 
 if __name__ == "__main__":
