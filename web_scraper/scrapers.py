@@ -1,36 +1,14 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
+from utils.web_driver import configure_webdriver
+from llm.extractor import extract_job_description
+from utils.helpers import split_company_and_batch
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
-import json
 import random
 from tqdm import tqdm
-from pprint import pprint
-from dotenv import load_dotenv
-from groq import Groq
-import os 
 
-load_dotenv()
-
-groq = Groq(
-    api_key=os.getenv("GROQ_API_KEY"),
-)
-
-def configure_webdriver():
-    """Return a configured headless Chrome webdriver."""
-    options = Options()
-    options.add_argument('--headless')
-    service = Service('/Users/gilbertyoung/Downloads/chromedriver-mac-arm64/chromedriver')
-    return webdriver.Chrome(service=service, options=options)
-
-def split_company_and_batch(text):
-    """Split company name and batch from formatted text."""
-    parts = text.split('\u00a0')
-    return (parts[0].strip(), parts[1].strip('()')) if len(parts) == 2 else (text, None)
 
 def scrape_job_listings(url):
     """Scrape job listings from the provided URL."""
@@ -65,72 +43,8 @@ def scrape_job_listings(url):
 
     return job_cards_html
 
-def parse_job_card(html):
-    """Extract job details from job card HTML."""
-    soup = BeautifulSoup(html, 'html.parser')
-    job_listing = {}
 
-    # Extract company name, batch, and description
-    company_details_tag = soup.find('div', class_="company-details")
-    if company_details_tag:
-        company_name_tag = company_details_tag.find('span', class_='font-bold')
-        if company_name_tag:
-            company_name, batch = split_company_and_batch(company_name_tag.text.strip())
-            job_listing.update({'company_name': company_name, 'batch': batch})
-
-        description_tag = company_details_tag.find('span', class_='text-gray-600')
-        if description_tag:
-            job_listing['description'] = description_tag.text.strip()
-
-        link_tag = company_details_tag.find('a', href=True)
-        if link_tag:
-            job_listing['company_link'] = link_tag['href']
-
-    # Extract job title, job type, location, and tech stack
-    job_name_tag = soup.find('div', class_='job-name')
-    if job_name_tag:
-        job_listing['job_name'] = job_name_tag.find('a').text.strip()
-        job_link_tag = job_name_tag.find('a', href=True)
-        if job_link_tag: 
-            job_listing['job_link'] = job_link_tag['href']
-
-    job_details_tag = soup.find('p', class_='job-details my-auto break-normal')
-    if job_details_tag:
-        spans = job_details_tag.find_all('span')
-        job_listing.update({
-            'job_type': spans[0].text.strip() if len(spans) > 0 else '',
-            'location': spans[1].text.strip() if len(spans) > 1 else '',
-            'tech_stack': spans[2].text.strip() if len(spans) > 2 else ''
-        })
-
-    return job_listing
-
-def save_to_json(data, filename="yc_job_listings.json"):
-    """Save job listings to a JSON file."""
-    with open(filename, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2)
-    print(f"Saved {len(data)} job listings to {filename}")
-
-
-def extract_job_description(html_content): 
-    prompt = f"""
-    You are an expert in extracting information from HTML elements. Given the below html
-    extract all information related to job description.
-    
-    {html_content}
-    """
-    
-    response = groq.chat.completions.create(
-            model="llama3-70b-8192",  # Use Llama-3 70B model
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.2,  # Low temperature for more deterministic responses
-            max_tokens=4000
-        )
-    return response.choices[0].message.content
-    
-    
-
-def get_company_founders(job_listings):
+def scrape_company_founders(job_listings):
     """Scrape founder information from company profile pages for each job listing."""
     driver = configure_webdriver()
     
@@ -198,7 +112,7 @@ def get_company_founders(job_listings):
     
     return job_listings
 
-def get_job_descriptions(job_listings):
+def scrape_job_descriptions(job_listings):
     """Scrape detailed job descriptions from job listing URLs using a more flexible approach."""
     driver = configure_webdriver()
     
@@ -236,31 +150,43 @@ def get_job_descriptions(job_listings):
     
     return job_listings
 
-def main():
-    # Scrape and parse job listings
-    url = "https://www.workatastartup.com/jobs"
-    print("Starting to scrape job listings...")
-    
-    job_cards_html = scrape_job_listings(url)
-    print(f"Successfully scraped {len(job_cards_html)} job listings")
+def parse_job_card(html):
+    """Extract job details from job card HTML."""
+    soup = BeautifulSoup(html, 'html.parser')
+    job_listing = {}
 
-    job_listings = []
-    
-    for html in tqdm(job_cards_html, desc="Parsing job listings", unit="job"):
-        job_listing = parse_job_card(html)
-        job_listings.append(job_listing)    
-        
-    enhanced_job_listing = get_company_founders(job_listings)
-    enhanced_job_listing = get_job_descriptions(job_listings)
-    
+    # Extract company name, batch, and description
+    company_details_tag = soup.find('div', class_="company-details")
+    if company_details_tag:
+        company_name_tag = company_details_tag.find('span', class_='font-bold')
+        if company_name_tag:
+            company_name, batch = split_company_and_batch(company_name_tag.text.strip())
+            job_listing.update({'company_name': company_name, 'batch': batch})
 
-    # Save results to JSON
-    save_to_json(enhanced_job_listing)
+        description_tag = company_details_tag.find('span', class_='text-gray-600')
+        if description_tag:
+            job_listing['description'] = description_tag.text.strip()
 
-    # # Optionally print a sample job listing
-    # if job_listings:
-    #     print("\nSample job listing:")
-    #     print(json.dumps(enhanced_job_listing[0], indent=2))
+        link_tag = company_details_tag.find('a', href=True)
+        if link_tag:
+            job_listing['company_link'] = link_tag['href']
 
-if __name__ == "__main__":
-    main()
+    # Extract job title, job type, location, and tech stack
+    job_name_tag = soup.find('div', class_='job-name')
+    if job_name_tag:
+        job_listing['job_name'] = job_name_tag.find('a').text.strip()
+        job_link_tag = job_name_tag.find('a', href=True)
+        if job_link_tag: 
+            job_listing['job_link'] = job_link_tag['href']
+
+    job_details_tag = soup.find('p', class_='job-details my-auto break-normal')
+    if job_details_tag:
+        spans = job_details_tag.find_all('span')
+        job_listing.update({
+            'job_type': spans[0].text.strip() if len(spans) > 0 else '',
+            'location': spans[1].text.strip() if len(spans) > 1 else '',
+            'tech_stack': spans[2].text.strip() if len(spans) > 2 else ''
+        })
+
+    return job_listing
+
