@@ -10,6 +10,15 @@ import json
 import random
 from tqdm import tqdm
 from pprint import pprint
+from dotenv import load_dotenv
+from groq import Groq
+import os 
+
+load_dotenv()
+
+groq = Groq(
+    api_key=os.getenv("GROQ_API_KEY"),
+)
 
 def configure_webdriver():
     """Return a configured headless Chrome webdriver."""
@@ -103,6 +112,24 @@ def save_to_json(data, filename="yc_job_listings.json"):
     print(f"Saved {len(data)} job listings to {filename}")
 
 
+def extract_job_description(html_content): 
+    prompt = f"""
+    You are an expert in extracting information from HTML elements. Given the below html
+    extract all information related to job description.
+    
+    {html_content}
+    """
+    
+    response = groq.chat.completions.create(
+            model="llama3-70b-8192",  # Use Llama-3 70B model
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2,  # Low temperature for more deterministic responses
+            max_tokens=4000
+        )
+    return response.choices[0].message.content
+    
+    
+
 def get_company_founders(job_listings):
     """Scrape founder information from company profile pages for each job listing."""
     driver = configure_webdriver()
@@ -181,7 +208,6 @@ def get_job_descriptions(job_listings):
                 job['detailed_description'] = ""  # No link to scrape
                 continue
                 
-            # Add random delay to avoid rate limiting
             time.sleep(random.uniform(1, 3))
             
             try:
@@ -191,92 +217,14 @@ def get_job_descriptions(job_listings):
                 # Wait for content to load
                 time.sleep(2)  # Simple wait to ensure page loads
                 
-                # First, try to find the main content container
-                # This will require some experimentation based on the site structure
+            
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
                 
-                # Try several potential selectors for the job description content
-                # This is where you'll need to adapt based on your observations
-                potential_containers = [
-                    soup.find('div', class_=lambda c: c and 'prose' in c),
-                    soup.find('div', class_=lambda c: c and 'job-description' in c),
-                    soup.find('div', class_=lambda c: c and 'description' in c),
-                    soup.find('div', role='main'),
-                    soup.find('main'),
-                    # Add more potential selectors as needed
-                ]
-                
-                # Find the first non-None container
-                container = next((c for c in potential_containers if c), None)
-                
-                # If we found a container, extract its text
-                if container:
-                    # Store the structured content
-                    job['detailed_description_html'] = str(container)
-                    
-                    # Extract sections based on headers (h1, h2, h3, h4, strong)
-                    sections = {}
-                    current_section = "overview"
-                    sections[current_section] = []
-                    
-                    # Recursive function to process nested elements
-                    def extract_content(element, current_section):
-                        for child in element.children:
-                            # Skip empty or non-tag elements
-                            if not hasattr(child, 'name') or not child.name:
-                                continue
-                                
-                            # Check if this is a section header
-                            is_header = child.name in ['h1', 'h2', 'h3', 'h4'] or (child.name == 'p' and child.find('strong'))
-                            
-                            if is_header:
-                                # Get section title from header
-                                if child.name in ['h1', 'h2', 'h3', 'h4']:
-                                    section_title = child.text.strip().lower()
-                                else:
-                                    section_title = child.find('strong').text.strip().lower()
-                                
-                                # Clean up section title
-                                section_title = section_title.replace(':', '').strip()
-                                
-                                # Create new section if it doesn't exist
-                                if section_title not in sections:
-                                    sections[section_title] = []
-                                
-                                # Update current section
-                                return section_title
-                            
-                            # Handle list elements
-                            elif child.name == 'ul' or child.name == 'ol':
-                                for li in child.find_all('li'):
-                                    sections[current_section].append(li.text.strip())
-                            
-                            # Handle paragraphs and other text elements
-                            elif child.name == 'p' or child.name in ['div', 'span']:
-                                # Ignore empty paragraphs
-                                if child.text.strip():
-                                    sections[current_section].append(child.text.strip())
-                            
-                            # Recursively process nested elements
-                            else:
-                                updated_section = extract_content(child, current_section)
-                                if updated_section:
-                                    current_section = updated_section
-                        
-                        return None
-                    
-                    # Process the container to extract sections
-                    extract_content(container, current_section)
-                    
-                    # Store the extracted sections
-                    job['detailed_description'] = sections
-                    
-                    # As a fallback, also store the full text
-                    job['full_text'] = container.text.strip()
-                else:
-                    # If we couldn't find a container, store the page title and body text
-                    job['detailed_description'] = {}
-                    job['full_text'] = soup.body.text.strip() if soup.body else ""
+                job_description_html = soup.find('div', class_='prose max-w-full')
+                job_description = extract_job_description(job_description_html)
+                job['job_description_detailed'] = job_description
+
+               
                 
             except Exception as e:
                 print(f"Error scraping job description for {job.get('job_name', 'unknown job')} at {job.get('company_name', 'unknown company')}: {str(e)}")
