@@ -1,4 +1,5 @@
 import json
+import re
 
 def split_company_and_batch(text):
     """Split company name and batch from formatted text."""
@@ -11,3 +12,23 @@ def save_to_json(data, filename="yc_job_listings.json"):
         json.dump(data, f, indent=2)
     print(f"Saved {len(data)} job listings to {filename}")
 
+
+
+def clean_document_text(text):
+        # Clean markdown elements
+        # Remove bold markers
+        text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
+        
+        # Remove bullet points and indentation markers
+        text = re.sub(r'[\n\r]*\s*[\+\*\-]\s*', ' ', text)
+        
+        # Remove tab indentation
+        text = re.sub(r'\\t\+\s*', '', text)
+        
+        # Convert multiple newlines to a single space
+        text = re.sub(r'\\n+', ' ', text)
+        
+        # Clean up extra spaces
+        text = re.sub(r'\s+', ' ', text).strip()
+        
+        return text
