@@ -10,3 +10,4 @@ langchain
 langchain-groq
 langchain-huggingface
 langchain-text-splitters
+langchain-pinecone
