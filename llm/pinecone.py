@@ -2,6 +2,9 @@ from dotenv import load_dotenv
 from pinecone import Pinecone, ServerlessSpec
 import os
 import time 
+from langchain_core.documents import Document
+from uuid import uuid4
+from typing import List
 
 load_dotenv()
 
@@ -22,3 +25,5 @@ def load_pinecone_index(index_name:str):
 
     return pinecone.Index(index_name)
     
+def upsert_documents(documents: List[Document]):
+    uuids = [str(uuid4()) for _ in range(len(documents))]
