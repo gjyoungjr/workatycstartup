@@ -51,6 +51,6 @@ def generate_embeddings(file_path: str):
             )
         documents.extend(docs)
         
-    pprint(f"Documents : {documents[0]}")
-        
+    return documents
+                
         
