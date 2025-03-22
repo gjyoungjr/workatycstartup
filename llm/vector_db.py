@@ -1,34 +1,38 @@
-from langchain_huggingface import HuggingFaceEmbeddings
+from dotenv import load_dotenv
+from pinecone import Pinecone, ServerlessSpec
+import os
+import time 
+from langchain_core.documents import Document
+from uuid import uuid4
 from langchain_text_splitters import RecursiveJsonSplitter
-from typing import Dict, List
-import json 
+from typing import  List
 from  pprint import pprint
-from utils.helpers import clean_document_text
+from utils.helpers import clean_document_text, load_json_data
 
-def load_json_data(file_path: str) -> List[Dict]:
-    """
-    Load JSON data from a file.
+load_dotenv()
+
+pinecone = Pinecone(api_key=os.environ['PINECONE_API_KEY'])
+
+def load_pinecone_index(index_name:str): 
+    existing_indexes = [index_info["name"] for index_info in pinecone.list_indexes()]
     
-    Args:
-        file_path (str): Path to the JSON file
-        
-    Returns:
-        List[Dict]: List of job listings from the JSON file
-        
-    Raises:
-        FileNotFoundError: If the JSON file doesn't exist
-        json.JSONDecodeError: If the JSON file is invalid
-    """
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        return data
-    except FileNotFoundError:
-        raise FileNotFoundError(f"Could not find JSON file at {file_path}")
-    except json.JSONDecodeError:
-        raise json.JSONDecodeError(f"Invalid JSON file at {file_path}")
+    if index_name not in existing_indexes:
+        pinecone.create_index(
+            name=index_name,
+            dimension=3072,
+            metric="cosine",
+            spec=ServerlessSpec(cloud="aws", region="us-east-1"),
+        )
+        while not pinecone.describe_index(index_name).status["ready"]:
+            time.sleep(1)
+
+    return pinecone.Index(index_name)
     
-def generate_embeddings(file_path: str):
+def upsert_documents(documents: List[Document]):
+    uuids = [str(uuid4()) for _ in range(len(documents))]
+    pprint(uuids)
+    
+def create_documents(file_path: str):
     data = load_json_data(file_path=file_path)
     splitter = RecursiveJsonSplitter(max_chunk_size=300)
     documents = []
@@ -53,4 +57,3 @@ def generate_embeddings(file_path: str):
         
     return documents
                 
-        
