@@ -1,5 +1,6 @@
 import json
 import re
+from typing import List, Dict
 
 def split_company_and_batch(text):
     """Split company name and batch from formatted text."""
@@ -11,8 +12,6 @@ def save_to_json(data, filename="yc_job_listings.json"):
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
     print(f"Saved {len(data)} job listings to {filename}")
-
-
 
 def clean_document_text(text):
         # Clean markdown elements
@@ -32,3 +31,28 @@ def clean_document_text(text):
         text = re.sub(r'\s+', ' ', text).strip()
         
         return text
+
+        
+def load_json_data(file_path: str) -> List[Dict]:
+    """
+    Load JSON data from a file.
+    
+    Args:
+        file_path (str): Path to the JSON file
+        
+    Returns:
+        List[Dict]: List of job listings from the JSON file
+        
+    Raises:
+        FileNotFoundError: If the JSON file doesn't exist
+        json.JSONDecodeError: If the JSON file is invalid
+    """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Could not find JSON file at {file_path}")
+    except json.JSONDecodeError:
+        raise json.JSONDecodeError(f"Invalid JSON file at {file_path}")
+    
