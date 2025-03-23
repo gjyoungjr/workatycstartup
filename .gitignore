@@ -1,3 +1,20 @@
-.venv
-.env
+# Node
+node_modules/
+.pnpm-store/
+
+# Python
+venv/
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
