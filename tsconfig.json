@@ -11,5 +11,8 @@
     "baseUrl": "."
   },
   "exclude": ["node_modules/*"],
-  "references": [{ "path": "./packages/backend" }]
+  "references": [
+    { "path": "./packages/backend" },
+    { "path": "./packages/frontend" }
+  ]
 }
