@@ -1,0 +1,13 @@
+redis==4.6.0
+requests==2.31.0
+beautifulsoup4==4.12.2
+openai==1.14.0
+selenium
+tqdm
+groq
+python-dotenv
+langchain
+langchain-groq
+langchain-huggingface
+langchain-text-splitters
+langchain-pinecone
