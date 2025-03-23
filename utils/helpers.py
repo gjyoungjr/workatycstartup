@@ -56,3 +56,19 @@ def load_json_data(file_path: str) -> List[Dict]:
     except json.JSONDecodeError:
         raise json.JSONDecodeError(f"Invalid JSON file at {file_path}")
     
+
+def transform_founders_data(founders):
+    """
+    Transforms a list of founder dictionaries into a list of formatted strings.
+    
+    Args:
+        founders (list of dict): List of founders with keys 'name', 'linkedin_url', and 'bio'.
+    
+    Returns:
+        list of str: List of formatted strings for each founder.
+    """
+    
+    return [
+        f"{founder['name']} | {founder.get('bio', 'Bio not available')} | {founder['linkedin_url']}"
+        for founder in founders
+    ]
